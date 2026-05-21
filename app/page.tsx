@@ -1,24 +1,11 @@
 export default function Home() {
   return (
-    <main style={{
-      padding: '50px', 
-      textAlign: 'center', 
-      fontFamily: 'sans-serif',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      backgroundColor: '#f5f5f5'
-    }}>
-      <h1 style={{color: '#0070f3', fontSize: '48px'}}>
-        Welcome to CredEx Audit
-      </h1>
-      <p style={{fontSize: '24px', marginTop: '20px'}}>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <h1 className="text-4xl font-bold text-blue-600">Welcome to CredEx Audit</h1>
+      <p className="text-xl text-blue-600 font-bold mt-4">
         Website built by Ananya Shukla 🚀
       </p>
-      <p style={{fontSize: '18px', color: '#666', marginTop: '10px'}}>
-        Day 2 Complete! I can code now.
-      </p>
+      <p className="mt-4">Day 2 Complete! I can code now.</p>
     </main>
   )
 }
