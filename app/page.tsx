@@ -10,62 +10,77 @@ export default function Home() {
   const [hours, setHours] = useState('60')
 
   return (
-    <main className="min-h-screen bg-white p-8">
-      <div className="max-w-2xl mx-auto">
-        {/* Heading ko kaala kiya */}
-        <h1 className="text-3xl font-bold mb-8 text-black">AI Efficiency Audit</h1>
+    <main style={{ minHeight: '100vh', backgroundColor: 'white', padding: '32px' }}>
+      <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+        {/* Inline style se force kaala */}
+        <h1 style={{ fontSize: '30px', fontWeight: 'bold', marginBottom: '32px', color: 'black' }}>
+          AI Efficiency Audit
+        </h1>
         
-        {/* Your Team Size */}
-        <div className="mb-6">
-          {/* Label ko kaala kiya */}
-          <label className="block text-sm font-bold mb-2 text-black">Your Team Size</label>
+        <div style={{ marginBottom: '24px' }}>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: 'bold', marginBottom: '8px', color: 'black' }}>
+            Your Team Size
+          </label>
           <input
             type="number"
             value={teamSize}
             onChange={(e) => setTeamSize(e.target.value)}
             placeholder="5"
-            className="border-2 border-gray-300 rounded-lg px-4 py-2 w-24 text-black placeholder:text-gray-500 bg-white"
+            style={{ 
+              border: '2px solid #ccc', 
+              borderRadius: '8px', 
+              padding: '8px 16px', 
+              width: '100px', 
+              color: 'black',
+              backgroundColor: 'white'
+            }}
           />
         </div>
 
-        {/* Your AI Tools */}
-        <div className="mb-6">
-          {/* Label ko kaala kiya */}
-          <label className="block text-sm font-bold mb-2 text-black">Your AI Tools</label>
-          <div className="flex gap-3">
+        <div style={{ marginBottom: '24px' }}>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: 'bold', marginBottom: '8px', color: 'black' }}>
+            Your AI Tools
+          </label>
+          <div style={{ display: 'flex', gap: '12px' }}>
             <input
               type="text"
               value={tool}
               onChange={(e) => setTool(e.target.value)}
               placeholder="ChatGPT"
-              className="border-2 border-gray-300 rounded-lg px-3 py-2 flex-1 text-black placeholder:text-gray-500 bg-white"
+              style={{ 
+                border: '2px solid #ccc', 
+                borderRadius: '8px', 
+                padding: '8px 12px', 
+                flex: 1, 
+                color: 'black',
+                backgroundColor: 'white'
+              }}
             />
             <input
               type="text"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               placeholder="Team"
-              className="border-2 border-gray-300 rounded-lg px-3 py-2 flex-1 text-black placeholder:text-gray-500 bg-white"
-            />
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              placeholder="2"
-              className="border-2 border-gray-300 rounded-lg px-3 py-2 w-20 text-black placeholder:text-gray-500 bg-white"
-            />
-            <input
-              type="number"
-              value={hours}
-              onChange={(e) => setHours(e.target.value)}
-              placeholder="60"
-              className="border-2 border-gray-300 rounded-lg px-3 py-2 w-20 text-black placeholder:text-gray-500 bg-white"
+              style={{ 
+                border: '2px solid #ccc', 
+                borderRadius: '8px', 
+                padding: '8px 12px', 
+                flex: 1, 
+                color: 'black',
+                backgroundColor: 'white'
+              }}
             />
           </div>
         </div>
 
-        {/* Run Audit Button */}
-        <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700">
+        <button style={{ 
+          backgroundColor: '#7c3aed', 
+          color: 'white', 
+          padding: '12px 24px', 
+          borderRadius: '8px', 
+          fontWeight: '600',
+          border: 'none'
+        }}>
           Run Audit
         </button>
       </div>
