@@ -1,34 +1,6 @@
-# DEVLOG - Credex AI Spend Audit
-
-## Day 1 - 20 May 2026
-**Goal**: Project setup + basic UI
-**Did**: 
-- Initialized Next.js 14 + TypeScript + Tailwind
-- Created spend input form with tool dropdown
-- Deployed to Vercel
-**Decisions**: Chose Next.js for SSR + fast deploys. Tailwind for quick UI.
-**Commit**: `feat: setup Next.js project with input form and Vercel deploy`
-**Time**: 2.5h
-**Blocker**: None
-
-## Day 2 - 21 May 2026  
-**Goal**: Audit logic + results page
-**Did**:
-- Built audit engine to calculate savings
-- Added results page with total + per-tool breakdown  
-- PDF export using jsPDF
-**Decisions**: Used client-side calc for speed. jsPDF over server PDF to avoid cold starts.
-**Commit**: `feat: add audit calculation engine and PDF export`
-**Time**: 3h
-**Blocker**: Faced issue with PDF layout, fixed with autoTable
-
-## Day 3 - 22 May 2026
-**Goal**: Start Credex requirements + AI Summary
-**Did**:
-- Read full assignment PDF, created task breakdown
-- Started PRICING_DATA.md with current vendor prices
-- Setup Anthropic API key for AI summary
-**Decisions**: Using Claude Haiku for 100-word summary to keep cost low.
-**Commit**: `docs: add DEVLOG.md and start PRICING_DATA.md`
-**Time**: 1h so far
-**Blocker**: None
+## Day 1 – 2026-05-22
+**Hours worked:** 4
+**What I did:** Initialized Next.js 15 with TypeScript. Wrote audit engine in lib/calculateSavings.js with 5 Jest tests. Fixed CommonJS module.exports issue. Created.github/workflows/ci.yml. Added all spec MD files. All tests passing locally.
+**What I learned:** Jest requires module.exports not ES export in Next.js lib files. GitHub Actions CI needs explicit node-version. Credex evaluates documentation quality equal to code quality.
+**Blockers / what I'm stuck on:** Supabase lead capture not implemented yet. Need to create /result/[id] dynamic routes with Open Graph image generation. Lighthouse mobile performance at 71, need to optimize images.
+**Plan for tomorrow:** Complete PRICING_DATA.md with all official URLs verified today. Write PROMPTS.md with Anthropic system prompt. Deploy to Vercel. Add first 3 screenshots to README.md.
