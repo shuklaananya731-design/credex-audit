@@ -3,6 +3,9 @@
 **🔗 Live Demo:** https://credex-audit-blush.vercel.app  
 **📹 Video Demo:** [Watch 2-min walkthrough](./demo.mp4)  
 **💻 GitHub:** https://github.com/shuklaananya731-design/credex-audit
+## 🚀 Lighthouse Mobile Score: 86/100
+![Lighthouse](lighthouse-score.png)
+**Performance: 86** | **Target: 85+** ✅ **PASSED**
 
 > Track AI tool usage vs spending. Save $21/month average.
 
