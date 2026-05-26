@@ -52,7 +52,7 @@ export default function Result() {
         <h3 style={{marginTop:'32px', marginBottom:'16px', color:'#0f172a'}}>Your Tools:</h3>
         {data.tools.map(t => (
           <div key={t.id} style={s.tool}>
-            <strong>{t.name}</strong> - {t.plan} - ${t.spend}/mo - {t.seats} seat{t.seats > 1 ? 's' : ''}
+            <strong>{t.name}</strong> - {t.plan} - ${t.spend}/mo - {t.seats} seat{t.seats > 1? 's' : ''}
           </div>
         ))}
       </div>
