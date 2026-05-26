@@ -40,18 +40,18 @@ export default function Home() {
   }
 
   const s = {
-    bg: { background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', minHeight: '100vh', color: 'white', padding: '40px 20px', fontFamily: 'system-ui' },
-    card: { maxWidth: '700px', margin: '0 auto', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '20px', padding: '40px', border: '1px solid rgba(255,255,255,0.1)' },
-    h1: { fontSize: '36px', fontWeight: '800', marginBottom: '8px', background: 'linear-gradient(135deg, #60a5fa, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' },
-    sub: { color: '#94a3b8', marginBottom: '32px', fontSize: '16px' },
-    toolBox: { background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '20px', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.1)' },
+    bg: { background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', minHeight: '100vh', color: '#0f172a', padding: '40px 20px', fontFamily: 'system-ui' },
+    card: { maxWidth: '700px', margin: '0 auto', background: 'white', borderRadius: '20px', padding: '40px', border: '1px solid #e2e8f0', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)' },
+    h1: { fontSize: '36px', fontWeight: '800', marginBottom: '8px', background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' },
+    sub: { color: '#64748b', marginBottom: '32px', fontSize: '16px' },
+    toolBox: { background: '#f8fafc', borderRadius: '12px', padding: '20px', marginBottom: '16px', border: '1px solid #e2e8f0' },
     row: { display: 'flex', gap: '12px', marginBottom: '12px', alignItems: 'center' },
-    input: { flex: 1, padding: '12px', background: 'rgba(15,23,42,0.6)', border: '1px solid #334155', borderRadius: '8px', color: 'white', fontSize: '14px' },
-    select: { flex: 1, padding: '12px', background: 'rgba(15,23,42,0.6)', border: '1px solid #334155', borderRadius: '8px', color: 'white', fontSize: '14px' },
-    label: { fontSize: '12px', color: '#94a3b8', marginBottom: '4px', display: 'block' },
+    input: { flex: 1, padding: '12px', background: 'white', border: '1px solid #cbd5e1', borderRadius: '8px', color: '#0f172a', fontSize: '14px', outline: 'none' },
+    select: { flex: 1, padding: '12px', background: 'white', border: '1px solid #cbd5e1', borderRadius: '8px', color: '#0f172a', fontSize: '14px', outline: 'none' },
+    label: { fontSize: '12px', color: '#64748b', marginBottom: '4px', display: 'block', fontWeight: '500' },
     btn: { padding: '16px 32px', background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)', border: 'none', borderRadius: '12px', color: 'white', fontSize: '16px', fontWeight: '600', cursor: 'pointer', width: '100%' },
-    addBtn: { padding: '12px 24px', background: 'rgba(59,130,246,0.2)', border: '1px solid #3b82f6', borderRadius: '8px', color: '#60a5fa', fontSize: '14px', cursor: 'pointer', marginBottom: '20px' },
-    delBtn: { padding: '8px 12px', background: 'rgba(239,68,68,0.2)', border: '1px solid #ef4444', borderRadius: '6px', color: '#f87171', cursor: 'pointer', fontSize: '12px' }
+    addBtn: { padding: '12px 24px', background: '#eff6ff', border: '1px solid #3b82f6', borderRadius: '8px', color: '#2563eb', fontSize: '14px', cursor: 'pointer', marginBottom: '20px', fontWeight: '500' },
+    delBtn: { padding: '8px 12px', background: '#fef2f2', border: '1px solid #ef4444', borderRadius: '6px', color: '#dc2626', cursor: 'pointer', fontSize: '12px', fontWeight: '500' }
   }
 
   return (
@@ -59,15 +59,15 @@ export default function Home() {
       <div style={s.card}>
         <h1 style={s.h1}>AI Tools Spend Audit</h1>
         <p style={s.sub}>Stop overpaying for Cursor, ChatGPT, Claude & Copilot. Get free audit in 60 seconds.</p>
-
+        
         <form onSubmit={handleSubmit}>
           {tools.map((tool, i) => (
             <div key={tool.id} style={s.toolBox}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'16px'}}>
-                <h3 style={{margin:0}}>Tool #{i+1}</h3>
+                <h3 style={{margin:0, color:'#0f172a'}}>Tool #{i+1}</h3>
                 {tools.length > 1 && <button type="button" style={s.delBtn} onClick={()=>deleteTool(tool.id)}>Delete</button>}
               </div>
-
+              
               <label style={s.label}>AI Tool</label>
               <select style={s.select} value={tool.name} onChange={e=>updateTool(tool.id, 'name', e.target.value)}>
                 {TOOL_OPTIONS.map(opt => <option key={opt.name} value={opt.name}>{opt.name}</option>)}
